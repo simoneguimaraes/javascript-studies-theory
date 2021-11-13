@@ -159,3 +159,13 @@ console.log(typeof parseInt(a)) // number
 ```
 let a = 1.34                      // number
 console.log(typeof a.toString())  // string
+```
+
+### Implicit Type Coersion
+Quando o JS faz a conversao quando voce usa '+', '==' para conseguir executar a ação:
+```
+let a = 1
+const b = 'Hello'
+
+console.log(b + a) // 'Hello1'
+```
