@@ -32,6 +32,7 @@
 ```Existem os dados de tipo primitivo (number, string, boolean, undefined, null, symbol). O restante é Objeto (Arrays, funções, objetos, regex).```
 
 ```O que muda entre esses tipos de dados é que **os dados de tipo primitivo são declarados como valor** e **os objetos são passados como referência**.```
+
 ## Imutabilidade nos Tipos de Dados
 
 - A mutabilidade e a imutabilidade estão relacionados ao fato de que, quando você copia o dado, ele altera ou não o seu original.
@@ -147,6 +148,7 @@ a('maria')
 ```
 ### Arrow Function
 Difference between an arrow function and a normal function
+() => {}
 
 ### Explicit Type Coersion
 Quando voce quer fazer a mudança de tipo da variavel
@@ -162,10 +164,82 @@ console.log(typeof a.toString())  // string
 ```
 
 ### Implicit Type Coersion
-Quando o JS faz a conversao quando voce usa '+', '==' para conseguir executar a ação:
+- Quando o JS faz a conversao quando voce usa '+', '==' para conseguir executar a ação.
+- Para evitar isso, usar o "===" para não haver erros.
+- Voce pode usar o "==" para checar dados com 'null' e 'undefined'.
 ```
 let a = 1
 const b = 'Hello'
 
 console.log(b + a) // 'Hello1'
 ```
+
+### NaN
+Quando voce recebe o erro de "NaN", o JS está sinalizando que não é um número. 
+Para checar se algo é NaN:
+```
+const a = parseInt('loops')
+console.log(isNaN(a)) // true
+```
+
+### Array
+
+- É uma variável que consegue armazenar uma lista de dados.
+```
+const a = [1, 2, 3. 4. 5]
+
+console.log(a) // (5) [1, 2, 3. 4. 5]
+```
+Para acessar um elemento da array, voce busca pelo [índice]:
+```
+console.log(a[0])
+```
+- Para adicionar um elemento na array:
+- Push adiciona um elemento ao final
+```
+a.push(6)
+```
+Em arrays, voce pode misturar os tipos de dados:
+```
+const arr = [1, 'mae', '56']
+```
+Voce pode adicionar uma array a uma array:
+```
+a.push([7, 8, 9])
+```
+Como pegar o tamanho da array
+```
+a.length
+```
+Como pegar o último elemento da array
+```
+console.log(a.length - 1)
+```
+Como pegar o elemento no meio da array: 
+```
+const alph = ['a', 'b', 'c', 'd', 'e']
+console.log(alph[Math.floor(alph.length/2)])
+```
+### Nested Array
+Como acessar os índices quando há array dentro de array
+```
+const a = [
+  [10, 11, 12],
+  ['hi', 'bye']
+]
+
+console.log(a[1][0]) // 'hi'
+``` 
+Como imprimir os números 4, 8 e 11
+```
+const a = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [11, 12, 13, 14, 15]
+]
+console.log(a[0][3], a[1][2], a[2][0])
+```
+
+### Objects
+
+
