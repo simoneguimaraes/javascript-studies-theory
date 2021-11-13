@@ -6,6 +6,17 @@
 - Se clicou em um botão, como voce manipula o evento click.
 - Como manipular arrays
 
+## Como fazer sites institucionais estáticos
+- Entender a semântica das tags
+
+## JavaScript
+- Formulários
+- Const var let
+- Hoisting
+- Array - filter, map, reduce
+- Funcão normal x arrow function
+- Requisições com Axios - APIs públicas *Youtube: agência de viagens e Dashboard do Star Wars usando API pública
+
 ## Como fazer uma lista de tarefas
 - Criar um campo de input para adicionar elementos
 - Adiciona elementos no array
