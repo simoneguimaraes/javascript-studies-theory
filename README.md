@@ -91,7 +91,59 @@ https://github.com/isadorastan/estudos
 - However JavaScript only hoists declarations, not initializations! This means that initialization doesn't happen until the associated line of code is executed, even if the variable was originally initialized then declared, or declared and initialized in the same line.
 
 ### Scope
+#### Variável em escopo global:
+- De dentro da funcao, voce consegue acessar as variaveis de escopo global
+```
+let name = 'Joao'
+{
+console.log(name) // 'João'
+}
+```
 
+#### Variável em escopo de função:
+- Você consegue não consegue acessar fora do escopo da função
+```
+{
+let name = 'Joao'
+}
+console.log(name) // undefined
+```
 
+### Nested Scope
+- Voce consegue ver as coisas que estão no escopo mais para fora, mas não consegue ver em um escopo para dentro.
+```
+let name = 'pedro'
+{
+  let name = 'jose'
+  {
+    let name = 'maria'
+  }
+}
+```
+
+### Closure
+No JS, a funcao vai buscar o valor mais recente da variavel para executar.
+```
+let name = 'lucas'
+
+function print() {
+  console.log(name)
+}
+
+name = 'paula'
+
+print() // 'paula'  
+```
+Ao inves de ter uma variável, a closure acontece com uma funcao dentro de outra:
+```
+function print(variable) {
+  return function func(otherVariable) {
+    console.log(variable)
+    console.log(otherVariable)
+  }
+}
+let a = print('jose')
+a('maria')
+```
 ### Arrow Function
 Difference between an arrow function and a normal function
