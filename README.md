@@ -90,7 +90,7 @@ https://github.com/isadorastan/estudos
 - Hoisting works with variables too, so you can use a variable in code before it is declared and/or initialized. 
 - However JavaScript only hoists declarations, not initializations! This means that initialization doesn't happen until the associated line of code is executed, even if the variable was originally initialized then declared, or declared and initialized in the same line.
 
-### Scope
+### Escopo
 #### Variável em escopo global:
 - De dentro da funcao, voce consegue acessar as variaveis de escopo global
 ```
@@ -147,3 +147,15 @@ a('maria')
 ```
 ### Arrow Function
 Difference between an arrow function and a normal function
+
+### Explicit Type Coersion
+Quando voce quer fazer a mudança de tipo da variavel
+```
+let a = '1'
+
+console.log(a)                  // string
+console.log(typeof parseInt(a)) // number
+```
+```
+let a = 1.34                      // number
+console.log(typeof a.toString())  // string
