@@ -6,10 +6,10 @@
 - Se clicou em um botão, como voce manipula o evento click.
 - Como manipular arrays
 
-## Como fazer sites institucionais estáticos
+### Como fazer sites institucionais estáticos
 - Entender a semântica das tags
 
-## JavaScript
+### JavaScript
 - Formulários
 - Const var let
 - Hoisting
@@ -17,75 +17,14 @@
 - Funcão normal x arrow function
 - Requisições com Axios - APIs públicas *Youtube: agência de viagens e Dashboard do Star Wars usando API pública
 
-## Como fazer uma lista de tarefas
+### Como fazer uma lista de tarefas
 - Criar um campo de input para adicionar elementos
 - Adiciona elementos no array
 - Deleta itens do array
 - Reordenar o array
 - Como marcar quais tarefas voce ja fez
 
-## JS é uma linguagem orientada a objetos
-
-- O JS é um sistema de tipos - tipos primitivos e complexos
-- O JS nao é fortemente tipada - podemos declarar uma variável sem especificar o tipo de valor. E o tipo pode mudar.
-
-```Existem os dados de tipo primitivo (number, string, boolean, undefined, null, symbol). O restante é Objeto (Arrays, funções, objetos, regex).```
-
-```O que muda entre esses tipos de dados é que **os dados de tipo primitivo são declarados como valor** e **os objetos são passados como referência**.```
-
-## Imutabilidade nos Tipos de Dados
-
-- A mutabilidade e a imutabilidade estão relacionados ao fato de que, quando você copia o dado, ele altera ou não o seu original.
-- Quando você faz uma cópia de dados primitivos, o original nunca muda.
-- Quando você faz uma cópia de dados do tipo objeto, o original é alterado.
-
-### Dados do tipo primitivo
-Os dados de **tipo primitivo** são passados por **valor** e são **imutáveis**:
-```
-let name = 'Carlos'
-let firstName = name
-```
-
-- Quando voce cria as duas variáveis de tipo primitivo, é criado um ponto de memória específico pra ele.
-- Então se eu alterar name, firstName não é alterado. 
-Se eu fizer:
-```
-let fullName = 'Simone Guimaraes'
-let firstName = fullName.slice(0, 6)
-console.log(firstName) // 'Simone'
-```
-A variável fullName não será alterada.
-
-### Dados do tipo Objeto
-Os dados que são do **tipo Objeto** são passados por **referência** e são **mutáveis**:
-```
-let name = {}
-let firstName = name
-```
-
-- Quando voce cria a variável de tipo objeto 'name', é criado um ponto de memória específico pra ele. Porém, quando voce cria a variável 'firstName' que tem como referência o 'name', não é criado outro espaço de memória para ele. 
-- Os dois vão apontar para *o mesmo espaço na memória*.
-- Então se eu alterar name, firstName é alterado e vice-versa. 
-Se eu fizer:
-```
-let numbers = [4, 3, 2, 1]
-let orderedNumbers = numbers.sort()
-console.log(numbers) // [1, 2, 3, 4]
-```
-A variável numbers foi alterada, sofreu uma mutação.
-
-
-## Tópicos
-Como usar as tags HTML certas
-CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
-Saber os principais métodos - map, filter, reduce
-Diferença entre as variáveis const, let e var
-O que é Hoisting, Escopo, Arrow Function
-O que significa Linguagem Orientada a Objetos
-https://github.com/isadorastan/estudos
-
 ### Hoisting
-
 - JavaScript's interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
 - One of the advantages of hoisting is that it **lets you use a function before you declare it in your code**. 
 - Hoisting works with variables too, so you can use a variable in code before it is declared and/or initialized. 
@@ -184,7 +123,7 @@ console.log(isNaN(a)) // true
 
 ### Array
 
-- É uma variável que consegue armazenar uma lista de dados.
+É uma variável que consegue armazenar uma lista de dados.
 ```
 const a = [1, 2, 3. 4. 5]
 
@@ -241,5 +180,139 @@ console.log(a[0][3], a[1][2], a[2][0])
 ```
 
 ### Objects
+Coleção de informação organizada por nome e valor.
+```
+let person = { key : value }
+```
+```
+let person = {
+  name: 'Simone',
+  age: 27,
+  favoriteFood = 'Pizza'  
+}
+```
+Para acessar as propriedades desse objeto, é só usar o '.':
+```
+console.log(person.age)
+```
+Voce tambem pode ter uma funcao dentro do objeto:
+```
+let car = {
+  make: 'volks',
+  model: 'black 2009',
+  isUsed: true,
+  makeNoise: function() {
+    console.log('Vroom')
+  },
+  sayBye() {
+    console.log('Bye')
+  }
+}
 
 
+car.makeNoise()
+console.log(car.make)
+console.log(car.isUsed)
+```
+
+### Nested Objects and Arrays
+- Para acessar as propriedades de um objeto, usar o '.'. 
+- Para acessar as propriedades do array, usar o [índice].
+
+```
+let person = {
+  name: 'Simone',
+  age: 27,
+  hobbies: ['Travelling', 'Photography'],
+  address: {
+    street: 'Rua Jose Bonifacio',
+    city: 'Lima'
+  }
+}
+
+console.log(person.address.city)
+console.log(person.hobbies[1])
+```
+Como mudar a propriedade de um objeto:
+```
+let book = {
+  title: 'O pequeno Rei',
+  author: {
+    name: 'Jose Bonifacio',
+    age: 73
+  genre: ['Mistery', 'Adult'],
+  }
+}
+
+book.author.age = 87
+console.log(book.author.age)
+```
+
+### Referência x Valor
+- Os tipos primitivos possuem um valor.
+- Nesse caso, o valor de c será 11 (10 + 1).
+```
+let a = 10
+let b = 2
+let c = a + 1
+```
+
+
+## JS é uma linguagem orientada a objetos
+
+- O JS é um sistema de tipos - tipos primitivos e complexos
+- O JS nao é fortemente tipada - podemos declarar uma variável sem especificar o tipo de valor. E o tipo pode mudar.
+
+```Existem os dados de tipo primitivo (number, string, boolean, undefined, null, symbol). O restante é Objeto (Arrays, funções, objetos, regex).```
+
+```O que muda entre esses tipos de dados é que **os dados de tipo primitivo são declarados como valor** e **os objetos são passados como referência**.```
+
+## Imutabilidade nos Tipos de Dados
+
+- A mutabilidade e a imutabilidade estão relacionados ao fato de que, quando você copia o dado, ele altera ou não o seu original.
+- Quando você faz uma cópia de dados primitivos, o original nunca muda.
+- Quando você faz uma cópia de dados do tipo objeto, o original é alterado.
+
+### Dados do tipo primitivo
+Os dados de **tipo primitivo** são passados por **valor** e são **imutáveis**:
+```
+let name = 'Carlos'
+let firstName = name
+```
+
+- Quando voce cria as duas variáveis de tipo primitivo, é criado um ponto de memória específico pra ele.
+- Então se eu alterar name, firstName não é alterado. 
+Se eu fizer:
+```
+let fullName = 'Simone Guimaraes'
+let firstName = fullName.slice(0, 6)
+console.log(firstName) // 'Simone'
+```
+A variável fullName não será alterada.
+
+### Dados do tipo Objeto
+Os dados que são do **tipo Objeto** são passados por **referência** e são **mutáveis**:
+```
+let name = {}
+let firstName = name
+```
+
+- Quando voce cria a variável de tipo objeto 'name', é criado um ponto de memória específico pra ele. Porém, quando voce cria a variável 'firstName' que tem como referência o 'name', não é criado outro espaço de memória para ele. 
+- Os dois vão apontar para *o mesmo espaço na memória*.
+- Então se eu alterar name, firstName é alterado e vice-versa. 
+Se eu fizer:
+```
+let numbers = [4, 3, 2, 1]
+let orderedNumbers = numbers.sort()
+console.log(numbers) // [1, 2, 3, 4]
+```
+A variável numbers foi alterada, sofreu uma mutação.
+
+## Tópicos
+Como usar as tags HTML certas
+CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
+Saber os principais métodos - map, filter, reduce
+Diferença entre as variáveis const, let e var
+O que é Hoisting, Escopo, Arrow Function
+O que significa Linguagem Orientada a Objetos
+https://github.com/isadorastan/estudos
