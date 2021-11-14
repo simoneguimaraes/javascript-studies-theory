@@ -4,10 +4,15 @@
 - if, for, lógica
 - Como manipular o DOM? Colocou um dado no input, como você usa esse valor no JS.
 - Se clicou em um botão, como voce manipula o evento click.
-- Como manipular arrays
+- Como manipular arrays - saber os principais métodos (map, filter, reduce)
+- Diferença entre as variáveis const, let e var
+- O que é Hoisting, Escopo, Arrow Function
+- O que significa Linguagem Orientada a Objetos
 
 ### Como fazer sites institucionais estáticos
 - Entender a semântica das tags
+- Como usar as tags HTML certas
+- CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
 
 ### JavaScript
 - Formulários
@@ -525,8 +530,6 @@ class User {
 const user = new User('Simone', 27)
 user.printName()
 ```
-
-
 ## JS é uma linguagem orientada a objetos
 
 - O JS é um sistema de tipos - tipos primitivos e complexos
@@ -577,11 +580,12 @@ console.log(numbers) // [1, 2, 3, 4]
 ```
 A variável numbers foi alterada, sofreu uma mutação.
 
-## Tópicos
-Como usar as tags HTML certas
-CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
-Saber os principais métodos - map, filter, reduce
-Diferença entre as variáveis const, let e var
-O que é Hoisting, Escopo, Arrow Function
-O que significa Linguagem Orientada a Objetos
-https://github.com/isadorastan/estudos
+### Async vs Defer
+- Quando voce coloca a tag script no final do Body, o download do script só começa a ser feito no final do carregamento da pagina 
+- Colocar no Head com a propriedade 'defer' para que o JS seja executado assim que abrir a pagina
+```
+<head>
+  <script defer src=''></script>
+</head> 
+```
+
