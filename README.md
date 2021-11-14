@@ -14,7 +14,7 @@ Anotações dos principais conceitos de JavaScript que tenho estudado.
 - [Template Literals](#template-literals)
 - [Constructor](#constructor)
 - [DOM](#dom)
-- [Event](#event-listeners)
+- [Event Listeners](#event-listeners)
 - [DOM Traversal](#dom-traversal) 
 - [Conceitos Básicos](#basico)
 
