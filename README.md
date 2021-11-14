@@ -681,9 +681,71 @@ const input = documento.querySelector('input')
   <button data-btn>Click Me</button>
 </body>
 ```
+Para adicionar uma ação no botão quando ele é clicado: 
 ```
 const btn = document.querySelector('[data-btn]')
+
+btn.addEventListener('click', () => {
+})
 ```
+Voce tambem pode remover o evento: 
+```
+btn.removeEventListener('click', () => {
+})
+```
+Para criar um evento (mouse event):
+```
+const btn = document.querySelector('[data-btn]')
+
+btn.addEventListener('click', (event) => {
+})
+```
+- Criando um evento para checar o texto digitado no input:
+-'Target' é o que de fato dispara o evento
+```
+<body>
+  <input data-input-text type='text' />
+</body>
+```
+```
+const input = document.querySelector('[data-input-text]')
+
+input.addEventListener('input', (event) => {
+  console.log(event.target.value === '')
+})
+```
+Criando um formulário:
+```
+<body>
+  <form data-form>
+    <input data-input-text type='text' />
+    <button type='submit' data-btn>Click Me</button>    
+  </form>
+</body>
+```
+```
+const form = document.querySelector('[data-form]')
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+})
+```
+Prevent Default: proibe que o comportamento padrão ocorra
+```
+<body>
+   <a href='https://google.com'>Go to Google</a>
+</body>
+```
+```
+const link = document.querySelector('a')
+
+link.addEventListener('click', (event) => {
+  event.preventDefault()
+})
+```
+
+
+
 
 
 
