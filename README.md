@@ -743,6 +743,110 @@ link.addEventListener('click', (event) => {
   event.preventDefault()
 })
 ```
+#### Exemplos
+Mouse Enter - Quando passamos o cursor pelo elemento
+```
+link.addEventListener('mouseenter', (event) => {
+  event.preventDefault()
+})
+```
+Mouse Leave - Quando o cursor sai do elemento
+```
+link.addEventListener('mouseleave', (event) => {
+  event.preventDefault()
+})
+```
+Mouse Over - Quando o cursor estiver no elemento
+```
+link.addEventListener('mouseover', (event) => {
+  event.preventDefault()
+})
+```
+Focus - Quando o elemento receber o foco (clicar nele, clicar na TAB)
+```
+link.addEventListener('focus', (event) => {
+  event.preventDefault()
+})
+```
+Blur - Quando o elemento perder o foco
+```
+link.addEventListener('blur', (event) => {
+  event.preventDefault()
+})
+```
+Resize - Quando a página é redimensionada
+```
+window.addEventListener('resize', (event) => {
+  event.preventDefault()
+})
+```
+
+### DOM Traversal
+- Como acessar a árvore do DOM usando a família
+#### Children
+- Para ir do elemento avô até o filho -> children
+```
+<body>
+  <div id='grand-parent'>Grand Parent
+    <div>Parent 1
+      <div>Child 1</div>
+      <div>Child 1</div>
+    <div>Parent 2
+  </div>
+</body>    
+```
+```
+const grandParent = document.querySelector('#grand-parent')
+const parentOne = grandParent.children[0]
+const parentTwo = parentOne.nextElementSibling
+const childOne = parentOne.children[0]
+
+grandParent.style.color = 'red'
+parentOne.style.color = 'green'
+parentTwo.style.color = 'blue'
+childOne.style.color = 'purple'
+```
+#### Parent Element
+Para ir do elemento filho até o avô -> parentElement
+```
+<body>
+  <div>Grand Parent
+    <div>Parent 1
+      <div id='child-one'>Child 1</div>
+      <div>Child 1</div>
+    <div>Parent 2
+  </div>
+</body>    
+```
+```
+const childOne = document.querySelector('#child-one')
+const parentOne = childOne.parentElement
+
+childOne.style.color = 'red'
+parentOne.style.color = 'green'
+parentTwo.style.color = 'blue'
+```
+#### Closest
+Para ir do elemento filho até o avô (ou mais) diretamente
+```
+<body>
+  <div class='grand-parent'>Grand Parent
+    <div>Parent 1
+      <div id='child-one'>Child 1</div>
+      <div>Child 1</div>
+    <div>Parent 2
+  </div>
+</body>    
+```
+Caso houver dois elementos com aquela classe, ele seleciona o mais proximo (closest)
+```
+const childOne = document.querySelector('#child-one')
+const grandParent = childOne.closest('.grand-parent')
+
+childOne.style.color = 'red'
+grandParent.style.color = 'green'
+```
+
 
 
 
