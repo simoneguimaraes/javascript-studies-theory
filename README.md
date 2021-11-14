@@ -1,32 +1,28 @@
 # Conceitos do JavaScript
+Anotações dos principais conceitos de JavaScript que tenho estudado.
+- [Hoisting](#hosting)
+- [Scope](#scope)
+- [Nested Scopes](#nested-scopes)
+- [Closure](#closure)
+- [Arrow Function](#arrow)
+- [Type Coersion](#coersion)
+- [Array](#array)
+- [Objects](#objects)
+- [Nested Objects](#nested-objects)
+- [Referencia x Valor](#referencia)
+- [Array Methods](#array-methods)
+- [Template Literals](#template-literals)
+- [Constructor](#constructor)
+- [DOM](#dom)
+- [Event](#event-listeners)
+- [DOM Traversal](#dom-traversal) 
+- [Conceitos Básicos](#basico)
 
-## Conceitos Básicos
-- if, for, lógica
-- Como manipular o DOM? Colocou um dado no input, como você usa esse valor no JS.
-- Se clicou em um botão, como voce manipula o evento click.
-- Como manipular arrays - saber os principais métodos (map, filter, reduce)
-- Diferença entre as variáveis const, let e var
-- O que é Hoisting, Escopo, Arrow Function
-- O que significa Linguagem Orientada a Objetos
-- Requisições com Axios - APIs públicas *Youtube: agência de viagens e Dashboard usando API pública
-
-### Como fazer sites institucionais estáticos
-- Entender a semântica das tags
-- Como usar as tags HTML certas
-- CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
-
-### Como fazer uma lista de tarefas
-- Criar um campo de input para adicionar elementos
-- Adiciona elementos no array
-- Deleta itens do array
-- Reordenar o array
-- Como marcar quais tarefas voce ja fez
-
-### Hoisting
-O interpretador do JavaScript sobe a declaração de funções para o topo do seu escopo, antes da execução do código.
-Uma das vantages é que você pode executar a função antes da declaração dela.
-Hoisting funciona com as variáveis também. Porém o JS sobe apenas a declaracao das variaveis, e nao a inicialização.
-Dessa forma, a inicializacao nao acontece ate que a linha de código onde ela foi inicializada for executado.
+### <a name="hosting"></a> Hoisting
+- O interpretador do JavaScript sobe a declaração de funções para o topo do seu escopo, antes da execução do código.
+- Uma das vantages é que você pode executar a função antes da declaração dela.
+- Hoisting funciona com as variáveis também. Porém o JS sobe apenas a declaracao das variaveis, e nao a inicialização.
+- Dessa forma, a inicializacao nao acontece ate que a linha de código onde ela foi inicializada for executado.
 
 ### Return
 A função é executada até a parte do 'return'. Tudo que vem em seguida não é executado. Nesse caso, a função nao executa o console.log. 
@@ -36,7 +32,7 @@ function sayHi(name) {
   console.log(`Say bye`)
 }
 ```
-### Escopo
+### <a name="scope"></a> Escopo
 #### Variável em escopo global:
 - De dentro da funcao, voce consegue acessar as variaveis de escopo global
 ```
@@ -55,7 +51,7 @@ let name = 'Joao'
 console.log(name) // undefined
 ```
 
-### Nested Scope
+### <a name="nested-scopes"></a>Nested Scope
 - Voce consegue ver as coisas que estão no escopo mais para fora, mas não consegue ver em um escopo para dentro.
 ```
 let name = 'pedro'
@@ -67,7 +63,7 @@ let name = 'pedro'
 }
 ```
 
-### Closure
+### <a name="closure"></a>Closure
 No JS, a funcao vai buscar o valor mais recente da variavel para executar.
 ```
 let name = 'lucas'
@@ -91,11 +87,11 @@ function print(variable) {
 let a = print('jose')
 a('maria')
 ```
-### Arrow Function
+### <a name="arrow"></a>Arrow Function
 Difference between an arrow function and a normal function
 () => {}
 
-### Explicit Type Coersion
+### <a name="coersion"></a>Explicit Type Coersion
 Quando voce quer fazer a mudança de tipo da variavel
 ```
 let a = '1'
@@ -127,7 +123,7 @@ const a = parseInt('loops')
 console.log(isNaN(a)) // true
 ```
 
-### Array
+### <a name="array"></a>Array
 
 É uma variável que consegue armazenar uma lista de dados.
 ```
@@ -185,7 +181,7 @@ const a = [
 console.log(a[0][3], a[1][2], a[2][0])
 ```
 
-### Objects
+### <a name="objects"></a> Objects
 Coleção de informação organizada por nome e valor.
 ```
 let person = { key : value }
@@ -221,7 +217,7 @@ console.log(car.make)
 console.log(car.isUsed)
 ```
 
-### Nested Objects and Arrays
+### <a name="nested-objects"></a> Nested Objects and Arrays
 - Para acessar as propriedades de um objeto, usar o '.'. 
 - Para acessar as propriedades do array, usar o [índice].
 
@@ -254,7 +250,7 @@ book.author.age = 87
 console.log(book.author.age)
 ```
 
-### Referência x Valor
+### <a name="referencia"></a>Referência x Valor
 #### Os tipos primitivos possuem um valor.
 - Nesse caso, o valor de c será o valor de a + 1.
 ```
@@ -312,7 +308,7 @@ function add(array, element) {
 }
 ```
 
-## Array Methods
+## <a name="array-methods"></a>Array Methods
 ### 1 - forEach
 - Fazer um loop por todos os elementos
 - A funcao vai ser executada uma vez para cada elemento da array
@@ -458,13 +454,13 @@ console.log(isTrue)
 // true
 ```
 
-## String Template Literals
+## <a name="template-literals"></a> String Template Literals
 - Voce pode combinar strings com variáveis
 ```
 let name = 'Simone'
 console.log(`Hello ${name}`)
 ```
-## Constructor
+## <a name="constructor"></a>Constructor
 ### New
 Voce pode usar a palavra-chave New para criar um objeto:
 ```
@@ -573,7 +569,7 @@ console.log(numbers) // [1, 2, 3, 4]
 ```
 A variável numbers foi alterada, sofreu uma mutação.
 
-## DOM
+## <a name="dom"></a> DOM
 ### Async vs Defer
 - Quando voce coloca a tag script no final do Body, o download do script só começa a ser feito no final do carregamento da pagina 
 - Colocar no Head com a propriedade 'defer' para que o JS seja executado assim que abrir a pagina
@@ -675,7 +671,7 @@ const divsWithClassesArray = Array.from(divsWithClasses)
 ```
 const input = documento.querySelector('input')
 ```
-### Event Listeners
+### <a name="event"></a>Event Listeners
 ```
 <body>
   <button data-btn>Click Me</button>
@@ -781,7 +777,7 @@ window.addEventListener('resize', (event) => {
 })
 ```
 
-### DOM Traversal
+### <a name="dom-traversal"></a>DOM Traversal
 - Como acessar a árvore do DOM usando a família
 #### Children
 - Para ir do elemento avô até o filho -> children
@@ -847,7 +843,27 @@ childOne.style.color = 'red'
 grandParent.style.color = 'green'
 ```
 
+### <a name="basico"></a>Conceitos Básicos
+- if, for, lógica
+- Como manipular o DOM? Colocou um dado no input, como você usa esse valor no JS.
+- Se clicou em um botão, como voce manipula o evento click.
+- Como manipular arrays - saber os principais métodos (map, filter, reduce)
+- Diferença entre as variáveis const, let e var
+- O que é Hoisting, Escopo, Arrow Function
+- O que significa Linguagem Orientada a Objetos
+- Requisições com Axios - APIs públicas *Youtube: agência de viagens e Dashboard usando API pública
 
+### Como fazer sites institucionais estáticos
+- Entender a semântica das tags
+- Como usar as tags HTML certas
+- CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
+
+### Como fazer uma lista de tarefas
+- Criar um campo de input para adicionar elementos
+- Adiciona elementos no array
+- Deleta itens do array
+- Reordenar o array
+- Como marcar quais tarefas voce ja fez
 
 
 
