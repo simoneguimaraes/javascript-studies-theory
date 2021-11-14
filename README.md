@@ -249,12 +249,69 @@ console.log(book.author.age)
 ```
 
 ### Referência x Valor
-- Os tipos primitivos possuem um valor.
-- Nesse caso, o valor de c será 11 (10 + 1).
+#### Os tipos primitivos possuem um valor.
+- Nesse caso, o valor de c será o valor de a + 1.
 ```
 let a = 10
 let b = 2
 let c = a + 1
+```
+#### Os tipos Objeto possuem uma referência - um espaço de memória alocado a eles
+É importante saber que **o valor de um objeto é o seu endereco de memoria** 
+```
+let a = [1, 2]
+let b = a
+
+a = <0x01> = [1, 2]
+b = <0x01> = [1, 2]
+```
+- O endereço de memória de 'a' e 'b' é o mesmo '<0x01>' e o valor é [1, 2].
+- Caso voce altere o valor de b, as duas variaveis vao mudar de valor.
+```
+let a = [1, 2]
+let b = a
+b.push(3)
+
+a = <0x01> = [1, 2, 3]
+b = <0x01> = [1, 2, 3]
+```
+Quando voce cria duas arrays com o mesmo nome, elas terão diferentes espaços de memoria
+```
+let a = [1, 2]  //<0x01>
+let b = [1, 2]  //<0x02>
+console.log(a === b) // false
+```
+- O valor de um objeto é o seu endereço de memoria. Então quando voce declara ele com const, o que vai ficar imutavel é o seu endereco de memoria.
+- Por isso que é possível alterar o conteúdo de um objeto mesmo declarando ele com const.
+```
+const c = [1, 2, 3]
+c.push(6)
+```
+- Para mudar um espaço de memória, voce precisa redefinir o objeto
+- Se usar o const nesse caso, vai dar erro
+```
+let a = [1, 2]  //<0x01>
+let b = [1, 2]  //<0x02>
+a = [1, 2, 3]   //<0x03>
+```
+
+```
+const a = [1, 2]
+const elementoToAdd = 3
+
+add(a, elementoToAdd)
+
+function add(array, element) {
+  array.push(element)
+}
+```
+
+## Array Methods
+### forEach
+A funcao vai ser executada uma vez para cada elemento da array
+```
+const a = [1, 2, 3, 4, 5]
+a.forEach((currentNumber) => console.log(currentNumber))
 ```
 
 
