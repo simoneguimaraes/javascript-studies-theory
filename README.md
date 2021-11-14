@@ -606,10 +606,10 @@ document.body.appendChild(element)
 
 ```
 <body>
-<div id='div-id'>Id element</div>
-<div class='div-class'>Class element</div>
-<div class='div-class'>Class element</div>
-<div class='div-class'>Class element</div>
+  <div id='div-id'>Id element</div>
+  <div class='div-class'>Class element</div>
+  <div class='div-class'>Class element</div>
+  <div class='div-class'>Class element</div>
 </body>
 ```
 Usar o 'getElementById' para selecionar um elemento baseado na sua Id
@@ -648,11 +648,42 @@ const divWithId = document.getElementById('div-id')
 divWithId.style.color = 'red'
 console.log(divWithId)
 ```
-
-
-
-
-
+#### Query Selector
+- **querySelector**: vai retornar o primeiro elemento
+- **querySelectorAll**: vai retornar um 'array' de elementos chamada Node List
+```
+<body>
+  <div data-test>This has a data attribute</div>
+  <div class='div-class'>Class element</div>
+  <div class='div-class'>Class element</div>
+  <input type='text'/>
+</body>
+```
+Você precisa usar o formato do CSS para selecionar os elementos 
+```
+const dataAttributeElement = document.querySelector('[data-test]')
+const divsWithClasses = document.querySelector('.div-class')
+```
+A Node List possui o método forEach 
+```
+divsWithClasses.forEach(div => div.style.color = 'red')
+```
+Porém, para usar outros métodos voce pode precisar converter a Node List em array
+```
+const divsWithClassesArray = Array.from(divsWithClasses)
+```
+```
+const input = documento.querySelector('input')
+```
+### Event Listeners
+```
+<body>
+  <button data-btn>Click Me</button>
+</body>
+```
+```
+const btn = document.querySelector('[data-btn]')
+```
 
 
 
