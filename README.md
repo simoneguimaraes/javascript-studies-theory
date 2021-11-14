@@ -353,7 +353,7 @@ console.log(lessThanThree)
 ```
 
 ### find
-
+6: 45
 
 
 
