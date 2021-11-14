@@ -8,19 +8,12 @@
 - Diferença entre as variáveis const, let e var
 - O que é Hoisting, Escopo, Arrow Function
 - O que significa Linguagem Orientada a Objetos
+- Requisições com Axios - APIs públicas *Youtube: agência de viagens e Dashboard usando API pública
 
 ### Como fazer sites institucionais estáticos
 - Entender a semântica das tags
 - Como usar as tags HTML certas
 - CSS rápido - reaproveitamento de classes, usar flexbox, fazer responsividade
-
-### JavaScript
-- Formulários
-- Const var let
-- Hoisting
-- Array - filter, map, reduce
-- Funcão normal x arrow function
-- Requisições com Axios - APIs públicas *Youtube: agência de viagens e Dashboard do Star Wars usando API pública
 
 ### Como fazer uma lista de tarefas
 - Criar um campo de input para adicionar elementos
@@ -30,10 +23,10 @@
 - Como marcar quais tarefas voce ja fez
 
 ### Hoisting
-- JavaScript's interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
-- One of the advantages of hoisting is that it **lets you use a function before you declare it in your code**. 
-- Hoisting works with variables too, so you can use a variable in code before it is declared and/or initialized. 
-- However JavaScript only hoists declarations, not initializations! This means that initialization doesn't happen until the associated line of code is executed, even if the variable was originally initialized then declared, or declared and initialized in the same line.
+O interpretador do JavaScript sobe a declaração de funções para o topo do seu escopo, antes da execução do código.
+Uma das vantages é que você pode executar a função antes da declaração dela.
+Hoisting funciona com as variáveis também. Porém o JS sobe apenas a declaracao das variaveis, e nao a inicialização.
+Dessa forma, a inicializacao nao acontece ate que a linha de código onde ela foi inicializada for executado.
 
 ### Return
 A função é executada até a parte do 'return'. Tudo que vem em seguida não é executado. Nesse caso, a função nao executa o console.log. 
@@ -609,3 +602,25 @@ element.innerText = 'Hello World'
 document.body.appendChild(element)
 ```
 ### Id and Class Selectors
+#### Id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
