@@ -308,11 +308,63 @@ function add(array, element) {
 
 ## Array Methods
 ### forEach
-A funcao vai ser executada uma vez para cada elemento da array
+- Fazer um loop por todos os elementos
+- A funcao vai ser executada uma vez para cada elemento da array
+- Ele nao retorna nada
+
 ```
 const a = [1, 2, 3, 4, 5]
 a.forEach((currentNumber) => console.log(currentNumber))
 ```
+```
+const a = [1, 2, 3, 4, 5]
+a.forEach((currentNumber, index) => console.log(`${index}: ${currentNumber}`))
+```
+
+### map
+- Você cria uma nova array com uma modificação em todos os elementos
+- A diferença é que ele retorna um valor na função - que pode ser guardado em uma variável
+- Ele nao modifica a array original
+
+```
+const a = [1, 2, 3, 4, 5]
+
+const dubleNum = a.map((currentNumber) => {
+  return currentNumber * 2 
+})
+
+console.log(dubleNum)
+```
+
+### filter
+- Voce retorna uma array menor com apenas os valores que voce quer
+- Se o valor retornar 'true' ele mantém na array. Se retornar 'false' ele retira da array
+- Você cria uma nova array
+- Ele nao modifica a array original
+
+```
+const a = [1, 2, 3, 4, 5]
+
+const lessThanThree = a.filter((currentNumber) => {
+  return currentNumber <= 2 
+})
+
+console.log(lessThanThree)
+```
+
+### find
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## JS é uma linguagem orientada a objetos
