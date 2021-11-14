@@ -604,9 +604,50 @@ document.body.appendChild(element)
 ### Id and Class Selectors
 #### Id
 
+```
+<body>
+<div id='div-id'>Id element</div>
+<div class='div-class'>Class element</div>
+<div class='div-class'>Class element</div>
+<div class='div-class'>Class element</div>
+</body>
+```
+Usar o 'getElementById' para selecionar um elemento baseado na sua Id
+```
+const divWithId = document.getElementById('div-id')
+divWithId.style.color = 'red'
+```
 
-
-
+#### Class
+- Usar o 'getElementsByClassName' para selecionar todos os elementos com aquela classe
+- Ele vai retornar uma 'array' de elementos chamada HTML Collection 
+```
+const divsWithClass = document.getElementsByClassName('div-class')
+```
+Voce nao consegue selecionar todas as divs e passar um atributo de cor, por exemplo, porque as divs estao como uma HTML Collection e elas nao têm essa propriedade 'style'.
+```
+divsWithClass.style.color = 'green' --> nao vai funcionar
+```
+Voce tambem nao vai conseguir selecionar os elementos usando métodos de array, pois é uma HTML Collection.
+```
+divsWithClass.forEach(div => div.style.color = 'green') --> nao vai funcionar
+```
+Voce pode selecionar apenas um dos itens da HTML Collection usando o índice:
+```
+divsWithClass[0].style.color = 'green'
+divsWithClass[1].style.color = 'blue'
+```
+Ou voce pode transformar essa HTML Collection em array para selecionar todos os elementos:
+```
+const divsWithClassArray = Array.from(divsWithClass)
+divsWithClassArray.forEach(div => div.style.color = 'green')
+```
+Para visualizar o que voce está fazendo, é só jogar no console para entender qual é o elemento que foi selecionado:
+```
+const divWithId = document.getElementById('div-id')
+divWithId.style.color = 'red'
+console.log(divWithId)
+```
 
 
 
