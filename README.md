@@ -30,6 +30,14 @@
 - Hoisting works with variables too, so you can use a variable in code before it is declared and/or initialized. 
 - However JavaScript only hoists declarations, not initializations! This means that initialization doesn't happen until the associated line of code is executed, even if the variable was originally initialized then declared, or declared and initialized in the same line.
 
+### Return
+A função é executada até a parte do 'return'. Tudo que vem em seguida não é executado. Nesse caso, a função nao executa o console.log. 
+```
+function sayHi(name) {
+  return `Hello ${name}`
+  console.log(`Say bye`)
+}
+```
 ### Escopo
 #### Variável em escopo global:
 - De dentro da funcao, voce consegue acessar as variaveis de escopo global
@@ -307,10 +315,10 @@ function add(array, element) {
 ```
 
 ## Array Methods
-### forEach
+### 1 - forEach
 - Fazer um loop por todos os elementos
 - A funcao vai ser executada uma vez para cada elemento da array
-- Ele nao retorna nada
+- Ele nao retorna nada, voce nao consegue guardar esse valor
 
 ```
 const a = [1, 2, 3, 4, 5]
@@ -321,7 +329,8 @@ const a = [1, 2, 3, 4, 5]
 a.forEach((currentNumber, index) => console.log(`${index}: ${currentNumber}`))
 ```
 
-### map
+### 2 - map
+- Ele percorre todos os elementos da array e faz uma mesma modificação em cada um
 - Você cria uma nova array com uma modificação em todos os elementos
 - A diferença é que ele retorna um valor na função - que pode ser guardado em uma variável
 - Ele nao modifica a array original
@@ -333,10 +342,12 @@ const dubleNum = a.map((currentNumber) => {
   return currentNumber * 2 
 })
 
-console.log(dubleNum)
+console.log(dubleNum) 
+// [2,4,6,8,10]
 ```
 
-### filter
+### 3 - filter
+- Ele percorre todos os elementos da array e retorna apenas os elementos os que dão 'true' na condição que voce criou
 - Voce retorna uma array menor com apenas os valores que voce quer
 - Se o valor retornar 'true' ele mantém na array. Se retornar 'false' ele retira da array
 - Você cria uma nova array
@@ -349,22 +360,171 @@ const lessThanThree = a.filter((currentNumber) => {
   return currentNumber <= 2 
 })
 
-console.log(lessThanThree)
+console.log(lessThanThree) 
+// [1, 2]
 ```
 
-### find
-6: 45
+### 4 - find
+- Ele percorre todos os elementos da array e retorna o primeiro elemento que der 'true' na condição que voce criou
+- Ele retorna apenas o valor
+- Ele nao modifica a array original
 
+```
+const a = [1, 2, 3, 4, 5]
 
+const biggerThanTwo = a.find((currentNumber) => {
+  return currentNumber > 2 
+})
 
+console.log(biggerThanTwo)
+// 3
+```
+### 5 - some
+- Ele percorre todos os elementos da array e verifica se pelo menos um elemento dá 'true' na condição que voce criou
+- Ele retorna apenas true/false indicando se existe algum elemento com essa condição
+- Ele nao modifica a array original
+```
+const a = [1, 2, 3, 4, 5]
 
+const isTrue = a.some((currentNumber) => {
+  return currentNumber > 2 
+})
 
+console.log(isTrue)
+// true
+```
 
+### 6 - every
+- Ele percorre todos os elementos da array e verifica se todos os elementos dão 'true' na condição que voce criou
+- Ele retorna apenas true/false indicando se existe todos os elementos tem essa condição
+- Ele nao modifica a array original
+```
+const a = [1, 2, 3, 4, 5]
 
+const isTrue = a.every((currentNumber) => {
+  return currentNumber > 3
+})
 
+console.log(isTrue)
+// false
+```
+### 7 - reduce
+- Ele pega todos os elementos da array e reduz a apenas um valor, por meio de um loop por todos os elementos e fazendo algo a cada vez.
+- Ele usa pelo menos dois parâmetros
+- Ele retorna um valor
+- O primeiro parametro é o 'acumulador'
+- O segundo parâmetro é o 'inicializador' (0). Esse 'zero' no final da funcao simboliza o valor do primeiro parametro da funcao reduce (sum) quando a funcao iniciar. 
+- Ele nao modifica a array original
+```
+const a = [1, 2, 3, 4, 5]
 
+const sumNumbers = a.reduce((sum, currentNumber) => {
+  return sum + currentNumber
+}, 0)
 
+// 0 + 1 = 1
+// 1 + 2 = 3
+// 3 + 3 = 6
+// 6 + 4 = 10
+// 10 + 5 = 15
 
+console.log(sumNumbers)
+// 15
+```
+Outro exemplo:
+```
+const items = [
+  { price: 10, isAvailable: true }, 
+  { price: 20, isAvailable: true }, 
+  { price: 14, isAvailable: true }, 
+  { price: 1, isAvailable: true }, 
+  { price: 6, isAvailable: true }
+]
+
+const totalPrice = items.reduce((sum, currentItem) => {
+  return sum + currentItem.price
+}, 0)
+
+console.log(totalPrice)
+// 51
+```
+### 8 - includes
+- Voce passa um valor e ele checa se o valor existe na sua array
+- Ele retorna true or false
+```
+const a = [1, 2, 3, 4, 5]
+
+const isTrue = a.includes(2) 
+
+console.log(isTrue)
+// true
+```
+
+## String Template Literals
+- Voce pode combinar strings com variáveis
+```
+let name = 'Simone'
+console.log(`Hello ${name}`)
+```
+## Constructor
+### New
+Voce pode usar a palavra-chave New para criar um objeto:
+```
+const date = new Date()  --> vai mostrar a data atual '21-11-14' como um objeto
+console.log(date)
+console.log(date.getDay()) // 0 (domingo)
+```
+
+### this
+Ao inves de criar uma funcao para gerar novos objetos (um novo usuário do site com suas propriedades, por exemplo), como essa:
+```
+function createUser(name, age) {
+  return { name: name, age: age, isHuman: true }
+}
+
+const user = createUser('Simone', 27)
+```
+- Voce pode usar a palavra-chave 'this' para na função Constructor:
+- Constructor function --> constructs a new object of a specified type
+- this -> keyword - referrences the current object you are trying to create
+- O que acontece no Constructor: quando voce usa a palavra-chave 'this', ele cria um novo objeto vazio 'this = {}' e retorna esse objeto no final da funcao 'return this'
+```
+function User(name, age) {
+      // this = {}
+  this.name = name
+  this.age = age
+  this.isHuman = isHuman
+      // return this
+}
+const user = new User('Simone', 27)
+```
+### Class
+A função também pode ser escrita assim:
+```
+class User {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+    this.isHuman = isHuman
+  }
+}
+const user = new User('Simone', 27)
+```
+E criar funções dentro do Construtor:
+```
+class User {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+    this.isHuman = isHuman
+  }
+  printName() {
+    console.log(this.name)
+  }
+}
+const user = new User('Simone', 27)
+user.printName()
+```
 
 
 ## JS é uma linguagem orientada a objetos
