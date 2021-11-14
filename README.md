@@ -580,6 +580,7 @@ console.log(numbers) // [1, 2, 3, 4]
 ```
 A variável numbers foi alterada, sofreu uma mutação.
 
+## DOM
 ### Async vs Defer
 - Quando voce coloca a tag script no final do Body, o download do script só começa a ser feito no final do carregamento da pagina 
 - Colocar no Head com a propriedade 'defer' para que o JS seja executado assim que abrir a pagina
@@ -589,3 +590,22 @@ A variável numbers foi alterada, sofreu uma mutação.
 </head> 
 ```
 
+### Window
+- É a janela toda da pagina. É um objeto que contém todas as propriedades da pagina.
+- Ela não precisa ser usada, já está subentendida.
+```
+window.alert('hi')
+alert('hi')
+```
+### Document Object
+- É todo o HTML da página. 
+- É a forma como voce pode interagir com o HTML da página
+- É muito útil para pegar os elementos da HTML, modificar o HTML, adicionar eventos, criar novos elementos para adicionar ao HTML
+- Para interagir com o Body: 'document.body'
+- Para criar um elemento: 
+```
+const element = document.createElement('span')
+element.innerText = 'Hello World'
+document.body.appendChild(element)
+```
+### Id and Class Selectors
